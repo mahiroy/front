@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 function NavbarView(props) {
   return (
     <>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav id="pageTop" className="navbar navbar-expand-md navbar-dark bg-dark">
         <div className="container-fluid">
           <button
             className="btn btn-outline text-white font-weight-bold"
@@ -15,7 +17,7 @@ function NavbarView(props) {
 
           <div
             className="drawer drawer-left slide"
-            tabindex="-1"
+            tabIndex="-1"
             role="dialog"
             aria-labelledby="drawer-demo-title"
             aria-hidden="true"
@@ -26,6 +28,7 @@ function NavbarView(props) {
               role="document"
             >
               <div className="drawer-header bg-dark text-white">
+                <Link to="/login">
                 <h5
                   className="drawer-title font-weight-bold m-auto"
                   id="drawer-demo-title"
@@ -33,16 +36,17 @@ function NavbarView(props) {
                   <i className="fas fa-user-circle fa-1x px-2"></i> Hello Sign
                   in
                 </h5>
+                </Link>
               </div>
               <div className="drawer-body">
                 <h6 className="text-muted text-uppercase">Help & Setting</h6>
                 <a
-                  href="your_account.html"
+                  href="#"
                   className="btn btn-outline-success btn-sm my-2"
                 >
                   Your Account
                 </a>
-                <a href="login.html" className="btn btn-warning btn-sm my-2">
+                <a href="#" className="btn btn-warning btn-sm my-2">
                   Singn In
                 </a>
               </div>
@@ -59,13 +63,14 @@ function NavbarView(props) {
             </div>
           </div>
 
-          <a className="navbar-brand pl-2" href="#">
+          <a  href="#">
+          <Link to="/" className="navbar-brand pl-2">
             <img
               src="assets/img/amazon_logo_light.png"
-              height="30"
-              width="100"
+              className="logo"
               alt="log"
             />
+            </Link>
           </a>
 
           <button
@@ -81,7 +86,7 @@ function NavbarView(props) {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <form className="form-inline px-lg-5" bovalidate method="GET">
+            <form className="form-inline px-lg-5" noValidate method="GET" >
               <div className="input-group">
                 <div className="input-group-prepend">
                   <div className="dropdown">
@@ -127,6 +132,7 @@ function NavbarView(props) {
                     </ul>
                   </div>
                 </div>
+
                 <input
                   type="text"
                   className="form-control"
@@ -175,7 +181,7 @@ function NavbarView(props) {
                         value="english"
                         checked
                       />
-                      <label className="custom-control-label" for="englishLang">
+                      <label className="custom-control-label" htmlFor="englishLang">
                         <img
                           src="assets/img/flag/eng.png"
                           alt="uk flag"
@@ -193,7 +199,7 @@ function NavbarView(props) {
                         id="hindiLang"
                         value="hindi"
                       />
-                      <label className="custom-control-label" for="hindiLang">
+                      <label className="custom-control-label" htmlFor="hindiLang">
                         <img
                           src="assets/img/flag/india.jpg"
                           alt="uk flag"
@@ -212,7 +218,7 @@ function NavbarView(props) {
                         id="banglaLeng"
                         value="bangla"
                       />
-                      <label className="custom-control-label" for="banglaLeng">
+                      <label className="custom-control-label" htmlFor="banglaLeng">
                         <img
                           src="assets/img/flag/bangla.jpg"
                           alt="uk flag"
@@ -241,15 +247,15 @@ function NavbarView(props) {
                   aria-labelledby="userAccount"
                 >
                   <div className="d-flex row justify-content-center">
-                    <a
-                      href="login.html"
+                    
+                    <Link to="/login"
                       className="btn btn-warning w-75 font-weight-bold"
                     >
                       Signin
-                    </a>
+                    </Link>
                     <small className="text-muted">
                       New Customer?
-                      <a href="register.html">Start here.</a>
+                      <Link to="/register">Start here.</Link>
                     </small>
                   </div>
                 </div>

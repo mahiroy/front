@@ -28,3 +28,13 @@ hr.hr-text::before{
 .breadcrumb-item + .breadcrumb-item::before {
     content: ">";
 }
+
+
+.sliderhight{
+    height: 500px;
+}
+
+.logo{
+height: 30px;
+width: 100px;
+}
